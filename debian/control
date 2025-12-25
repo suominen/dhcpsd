@@ -1,0 +1,23 @@
+Source: dhcpsd
+Section: net
+Priority: optional
+Maintainer: Roy Marples <roy@marples.name>
+Build-Depends: debhelper-compat (= 13),
+               dh-sequence-installsysusers,
+               libsystemd-dev,
+               pkgconf
+Standards-Version: 4.6.2
+Homepage: https://github.com/NetworkConfiguration/dhcpsd
+Vcs-Browser: https://github.com/NetworkConfiguration/dhcpsd
+Vcs-Git: https://github.com/NetworkConfiguration/dhcpsd.git
+Rules-Requires-Root: no
+
+Package: dhcpsd
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: DHCP service daemon
+ dhcpsd is a lightweight DHCP server daemon that provides IP address
+ assignment and network configuration to DHCP clients on a local network.
+ .
+ This package provides a simple and efficient DHCP server implementation
+ suitable for small networks and embedded systems.

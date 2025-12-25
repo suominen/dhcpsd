@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+DEB_CONFIGURE_EXTRA_FLAGS += --rundir='$${RUNSTATEDIR}'
+DEB_CONFIGURE_EXTRA_FLAGS += --datadir='$${STATEDIR}/lib'
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- ${DEB_CONFIGURE_EXTRA_FLAGS}
+
+override_dh_installsystemd:
+	dh_installsystemd --name=dhcpsd --no-start --no-enable

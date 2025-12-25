@@ -1,0 +1,28 @@
+dhcpsd for Debian
+-----------------
+
+Configuration
+-------------
+
+The dhcpsd daemon can be configured by editing the configuration file
+(if one exists) or by passing command-line arguments to the daemon.
+
+Service Management
+------------------
+
+The dhcpsd service is managed by systemd. You can control it with:
+
+  systemctl start dhcpsd
+  systemctl stop dhcpsd
+  systemctl restart dhcpsd
+  systemctl status dhcpsd
+
+To enable the service at boot:
+
+  systemctl enable dhcpsd
+
+Security Considerations
+-----------------------
+
+This package includes systemd hardening options to improve security.
+The service runs with minimal privileges and restricted capabilities.
